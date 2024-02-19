@@ -9,9 +9,8 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-
   let feelsLikeElement = document.querySelector("#feels-like");
-  console.log(response.data);
+
   iconElement.innerHTML = `<img
                 src="${response.data.condition.icon_url}"
                 
@@ -60,6 +59,7 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value);
 }
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -74,8 +74,6 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
@@ -84,7 +82,7 @@ function displayForecast(response) {
         forecastHtml +
         `
   <div class="weather-forecast-row">
-          <div class="weather-forecast-col">
+          <div class="weather-forecast-col"><div class="daily-forecast-container">
             <div class="weather-forecast-day">${formatDay(day.time)}</div>
             <div><img src="${
               day.condition.icon_url
@@ -92,7 +90,7 @@ function displayForecast(response) {
             <div class="weather-forecast-temps"><strong>${Math.round(
               day.temperature.maximum
             )}° </strong> ${Math.round(day.temperature.minimum)}°</div>
-          </div>
+          </div></div>
         </div>`;
     }
   });

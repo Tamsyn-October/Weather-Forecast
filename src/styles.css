@@ -2,19 +2,21 @@ body {
   background-color: #f9f7fe;
   font-family: "Roboto", sans-serif;
 }
-
+/*#f9f7fe*/
 a {
-  color: #885df1;
+  color: #ff9c6d;
 }
+/* #885df1*/
 
 .heading {
   text-align: center;
   font-weight: 400;
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.4);
+  color: #ff9c6d;
 }
 .container {
   background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
   max-width: 700px;
   margin: 45px auto;
   padding: 30px;
@@ -33,7 +35,7 @@ header {
 
 .search-form-input {
   background-color: #f9f7fe;
-  border: none;
+  border: 2px solid #8ed6ff;
   border-radius: 6px;
   width: 70%;
   padding: 15px 20px;
@@ -41,7 +43,7 @@ header {
 }
 
 .search-form-button {
-  background: #885df1;
+  background: #8ed6ff;
   padding: 15px 20px;
   border: none;
   border-radius: 6px;
@@ -76,11 +78,23 @@ main {
   padding-top: 40px;
 }
 
-.weather-app-details strong,
+.weather-app-details,
 strong {
-  color: #f65282;
+  color: rgb(255, 156, 109);
 }
 
+.heart-colour {
+  color: rgb(142, 214, 255);
+}
+
+.weather-forecast-temps {
+  text-align: center;
+  color: rgb(255, 156, 109);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+/*#f65282 */
 .weather-app-data {
   display: flex;
   justify-content: space-between;
@@ -90,12 +104,13 @@ strong {
   font-weight: bold;
   line-height: 88px;
   font-size: 80px;
+  margin-left: 20px;
 }
 
 .icon {
-  width: 88px;
-  height: 88px;
-  margin-top: -15px;
+  width: 68px;
+  height: 68px;
+  margin-top: -5px;
 }
 
 .weather-app-unit {
@@ -111,20 +126,20 @@ strong {
   display: flex;
   justify-content: space-around;
   margin: 0;
+  margin-bottom: 30px;
+  margin-left: -30px;
 }
 .app-data-container {
   line-height: 30px;
   margin-top: 0px;
-  margin-right: -10px;
 }
 
 .weather-app-temp-container {
   display: flex;
-  margin-left: -80px;
   margin-top: 15px;
 }
 footer {
-  border-top: 1px solid #f9f7fe;
+  border-top: 1px solid #fff6f6;
   padding: 30px 0 0 0;
   text-align: center;
   font-size: 14px;
@@ -134,13 +149,18 @@ footer {
 .weather-forecast-row {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
   color: #000;
+}
+.daily-forecast-container {
+  background-color: rgba(142, 214, 255, 0.3);
+  border: 2px solid rgb(142, 214, 255);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .weather-forecast-day {
   text-align: center;
-  color: rgba(39, 33, 66, 0.4);
+  color: rgba(39, 33, 66, 0.6);
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
@@ -151,11 +171,4 @@ footer {
   height: 88px;
   display: block;
   margin: 0 auto;
-}
-.weather-forecast-temps {
-  text-align: center;
-  color: #f65282;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
 }
